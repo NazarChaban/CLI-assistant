@@ -18,7 +18,7 @@ def input_error(func):
 
 
 @input_error
-def add_user(name, phone):
+def add_user_handler(name, phone):
     if name in FOLDER.keys():
         raise ValueError
     FOLDER[name] = phone
@@ -26,7 +26,7 @@ def add_user(name, phone):
 
 
 @input_error
-def change_phone(name, phone):
+def change_phone_handler(name, phone):
     if name not in FOLDER.keys():
         raise KeyError
     FOLDER[name] = phone
@@ -34,21 +34,25 @@ def change_phone(name, phone):
 
 
 @input_error
-def find_phone(name):
+def find_phone_handler(name):
     return FOLDER[name]
 
 
 @input_error
-def show_all(_):
+def show_all_handler():
     return FOLDER
 
 
 COMMANDS = {
-    'add': add_user,
-    'change': change_phone,
-    'phone': find_phone,
-    'show': show_all,
+    'add': add_user_handler,
+    'change': change_phone_handler,
+    'phone': find_phone_handler,
+    'show all': show_all_handler,
 }
+
+
+def get_hendler(command):
+    return COMMANDS[command]
 
 
 def main():
@@ -63,14 +67,19 @@ def main():
             print('Good bye!')
             break
 
+        if user_input == 'show_all':
+            res = get_hendler(user_input)
+            print(res())
+            continue
+
         command, *args = user_input.split(' ')
 
         if command not in COMMANDS.keys():
             print('Wrong command! Try again)')
             continue
 
-        res = COMMANDS[command](args)
-        print(res)
+        handler_func = get_hendler(user_input)
+        print(handler_func(args))
 
 
 if __name__ == '__main__':
