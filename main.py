@@ -6,14 +6,14 @@ def input_error(func):
     def wrapper(args):
         try:
             return func(*args)
-        except TypeError as err:
-            return f'Incorrect input: {err}'
-        except KeyError as err:
-            return f'User not found: {err}'
-        except ValueError as err:
-            return f'User already exists: {err}'
-        except IndexError as err:
-            return f'Index error catched: {err}'
+        except TypeError:
+            return f'Incorrect input'
+        except KeyError:
+            return f'User not found'
+        except ValueError:
+            return f'User already exists'
+        except IndexError:
+            return f'Index error catched'
     return wrapper
 
 
@@ -38,7 +38,6 @@ def find_phone_handler(name):
     return FOLDER[name]
 
 
-@input_error
 def show_all_handler():
     return FOLDER
 
@@ -67,7 +66,7 @@ def main():
             print('Good bye!')
             break
 
-        if user_input == 'show_all':
+        if user_input == 'show all':
             res = get_hendler(user_input)
             print(res())
             continue
@@ -78,7 +77,7 @@ def main():
             print('Wrong command! Try again)')
             continue
 
-        handler_func = get_hendler(user_input)
+        handler_func = get_hendler(command)
         print(handler_func(args))
 
 
