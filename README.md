@@ -1,46 +1,54 @@
-# Contact Book CLI
+# CLI phone book
 
-This project provides a simple command-line interface (CLI) for managing a contact book. Users can add new contacts, change existing contact's phone numbers, find a specific contact's phone number, and display all contacts within the contact book.
+This is a Command Line Interface (CLI) Address Book application written in Python. It allows users to manage contact information, including names, phone numbers, and birthdays. The application provides various commands to add, find, and manage contacts as well as to save and load the address book data from a file.
 
 ## Features
 
-- **Add new contact**: Users can add a new contact to the contact book with a name and phone number.
-- **Change phone number**: Users can update the phone number for an existing contact.
-- **Find phone number**: Users can retrieve the phone number associated with a given contact.
-- **Show all contacts**: Users can view all the contacts and their phone numbers stored in the contact book.
+- **Add new contacts** with multiple phone numbers and an optional birthday.
+- **Find a contact** and display all related information.
+- **Find all contacts matching** a particular pattern in their names or phone numbers.
+- **Delete a contact** and all associated data.
+- **Save** the current state of the address book to a file.
+- **Load** the address book data from a file.
+- **Display all contacts** in the address book.
+- **Display contacts** in paginated format, with a custom number of contacts **per page**.
+- **Add a phone number** to an existing contact.
+- **Remove a phone number** from an existing contact.
+- **Edit an existing phone number** of a contact.
+- **Set or update a birthday** for a contact.
+- **Calculate the number** of days until a contact's next birthday.
 
-## Error Handling
+## Installation
 
-The program includes a decorator function `input_error` that wraps the main contact book functions to handle various exceptions such as incorrect input, non-existent users, duplicate users, and index errors. This ensures that the user receives a friendly error message instead of a Python stack trace if they make a mistake.
+To use the Address Book application, you need to have Python installed on your system. If you don't have Python installed, download and install it from the [official Python website](https://www.python.org/downloads/).
+
+Once Python is installed, clone this repository to your local machine:
 
 ## Usage
+To start the application, run the following command in your terminal:
+```sh
+python address_book.py
+```
+Once the application is running, you will be able to use the following commands:
 
-To use the contact book, run the script and follow the CLI prompts:
+`add` <name> <phone1> <phone2> ... [birthday]: Add a new contact.
+`find` <name>: Find and display a contact's information.
+`find matches` <pattern>: Find and display all contacts that match the pattern.
+`delete` <name>: Delete a contact.
+`save`: Save the address book to a file.
+`load`: Load the address book from a file.
+`show all`: Display all contacts.
+`show` <n>: Display contacts in pages, n contacts per page.
+`add phone` <name> <phone>: Add a phone number to a contact.
+`remove phone` <name> <phone>: Remove a phone number from a contact.
+`edit phone` <name> <old_phone> <new_phone>: Edit a contact's phone number.
+`find phone` <name> <phone>: Find and display a specific phone number.
+`add birthday` <name> <birthday>: Add or update a contact's birthday.
+`days to birthday` <name>: Show the number of days until a contact's next birthday.
+To exit the application, type `good bye`, `close`, `exit`, or `.`.
 
-- Type `hello` to receive a greeting message.
-- To add a contact, type `add <name> <phone number>`.
-- To change a contact's phone number, type `change <name> <new phone number>`.
-- To find a contact's phone number, type `phone <name>`.
-- To show all contacts, simply type `show all` or `show`.
-- To exit the program, type one of the following commands: `good bye`, `close`, `exit`, or `.`.
+## Contributing
+Contributions to YOUR_PROJECT_NAME are welcome! Feel free to submit pull requests or open issues to improve the functionality or fix issues within the application.
 
-## Commands
-
-- `add`: Adds a new contact. Usage: `add John 1234567890`
-- `change`: Changes the phone number of an existing contact. Usage: `change John 0987654321`
-- `phone`: Retrieves the phone number for the given contact. Usage: `phone John`
-- `show all` or `show`: Displays all contacts in the contact book. Usage: `show all` or `show`
-- `hello`: Greets the user. Usage: `hello`
-- `good bye`, `close`, `exit`, `.`: Exit the program.
-
-## Main Function
-
-The `main` function is the entry point of the program. It continuously reads user input and processes commands until exit commands are entered. The program parses the input and executes the corresponding command function from the `COMMANDS` dictionary.
-
-### Contact Book Data Structure
-
-The contact book data is stored in a dictionary (`FOLDER`) where the keys are contact names and values are their respective phone numbers.
-
----
-
-Note: This README assumes that the intended audience has basic knowledge of how to run Python scripts from the command line.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
