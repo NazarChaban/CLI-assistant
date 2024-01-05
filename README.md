@@ -31,20 +31,20 @@ python address_book.py
 ```
 Once the application is running, you will be able to use the following commands:
 
-`add` <name> <phone1> <phone2> ... [birthday]: Add a new contact.
-`find` <name>: Find and display a contact's information.
-`find matches` <pattern>: Find and display all contacts that match the pattern.
-`delete` <name>: Delete a contact.
+`add <name> <phone1> <phone2> ... [birthday]`: Add a new contact.
+`find <name>`: Find and display a contact's information.
+`find matches <pattern>`: Find and display all contacts that match the pattern.
+`delete <name>`: Delete a contact.
 `save`: Save the address book to a file.
 `load`: Load the address book from a file.
 `show all`: Display all contacts.
-`show` <n>: Display contacts in pages, n contacts per page.
-`add phone` <name> <phone>: Add a phone number to a contact.
-`remove phone` <name> <phone>: Remove a phone number from a contact.
-`edit phone` <name> <old_phone> <new_phone>: Edit a contact's phone number.
-`find phone` <name> <phone>: Find and display a specific phone number.
-`add birthday` <name> <birthday>: Add or update a contact's birthday.
-`days to birthday` <name>: Show the number of days until a contact's next birthday.
+`show <n>`: Display contacts in pages, n contacts per page.
+`add phone <name> <phone>`: Add a phone number to a contact.
+`remove phone <name> <phone>`: Remove a phone number from a contact.
+`edit phone <name> <old_phone> <new_phone>`: Edit a contact's phone number.
+`find phone <name> <phone>`: Find and display a specific phone number.
+`add birthday <name> <birthday>`: Add or update a contact's birthday.
+`days to birthday <name>`: Show the number of days until a contact's next birthday.
 To exit the application, type `good bye`, `close`, `exit`, or `.`.
 
 ## Contributing
