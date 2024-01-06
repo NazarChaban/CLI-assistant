@@ -1,7 +1,8 @@
-from collections import UserDict
-from datetime import datetime
-from pickle import dump, load
+import os
 import re
+from pickle import dump, load
+from datetime import datetime
+from collections import UserDict
 
 
 class Connection:
@@ -388,6 +389,11 @@ def main():
 
             if user_input == 'help':
                 help()
+                continue
+
+            if user_input == 'clear':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                continue
 
             if user_input in ('good bye', 'close', 'exit', '.'):
                 print('Good bye!')

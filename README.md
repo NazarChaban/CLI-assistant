@@ -17,6 +17,8 @@ This is a Command Line Interface (CLI) Address Book application written in Pytho
 - **Edit an existing phone number** of a contact.
 - **Set or update a birthday** for a contact.
 - **Calculate the number** of days until a contact's next birthday.
+- **Clear** termanil.
+- **Exit** by typing key words.
 
 ## Installation
 
@@ -27,7 +29,7 @@ Once Python is installed, clone this repository to your local machine:
 ## Usage
 To start the application, run the following command in your terminal:
 ```sh
-python address_book.py
+python main.py
 ```
 Once the application is running, you will be able to use the following commands:
 
@@ -45,6 +47,7 @@ Once the application is running, you will be able to use the following commands:
 - `find phone <name> <phone>`: Find and display a specific phone number.
 - `add birthday <name> <birthday>`: Add or update a contact's birthday.
 - `days to birthday <name>`: Show the number of days until a contact's next birthday.
+- `clear`: clear output terminal.
 - To exit the application, type `good bye`, `close`, `exit`, or `.`.
 
 ## Contributing
