@@ -147,7 +147,8 @@ class AddressBook(UserDict):
             del self.data[name]
 
     def show_all(self):
-        return '\n'.join(str(record) for record in self.data.values())
+        res = '\n'.join(str(record) for record in self.data.values())
+        return res if res else 'Address book is empty'
 
     def iterator(self, n):
         start = 0
